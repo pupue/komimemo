@@ -4,9 +4,10 @@
     'Courier New', monospace;
   --color-text-main: #333;
   --color-text-sub: #999;
+  --color-text-code: #fff;
   --color-bg-main: #fff;
   --color-bg-sub: #f3f3f3;
-  --color-bg-code: #fafafa;
+  --color-bg-code: #263238;
   --color-border-dark: #ccc;
   --color-border: #ddd;
   --color-border-light: #f3f3f3;
@@ -33,7 +34,8 @@ body {
 
 code {
   font-family: menlo, inconsolata, monospace;
-  background: #fafafa;
+  background-color: var(--color-bg-code);
+  color: var(--color-text-code);
   padding: 8px;
 }
 
