@@ -13,6 +13,8 @@
 }
 
 .title {
+  font-family: var(--font-mplus), sans-serif;
+  font-weight: bold;
   font-size: 1.6rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
