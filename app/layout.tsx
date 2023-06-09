@@ -9,11 +9,11 @@ import { Nunito, Noto_Sans_JP, M_PLUS_Rounded_1c } from 'next/font/google';
 
 export const metadata = {
   metadataBase: new URL(process.env.BASE_URL || 'http://localhost:3000'),
-  title: 'Simple Blog',
-  description: 'A simple blog presented by microCMS',
+  title: 'こみいめも',
+  description: 'がんばります',
   openGraph: {
-    title: 'Simple Blog',
-    description: 'A simple blog presented by microCMS',
+    title: 'こみいめも',
+    description: 'がんばってかきます',
     images: '/og-image.png',
   },
   alternates: {
