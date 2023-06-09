@@ -11,9 +11,6 @@ type Props = {
 export default function Article({ data }: Props) {
   return (
     <main className={styles.main}>
-      <h1 className={styles.title}>{data.title}</h1>
-      <TagList tags={data.tags} />
-      <p className={styles.description}>{data.description}</p>
       <div className={styles.meta}>
         {data.writer && (
           <div className={styles.writer}>
@@ -35,6 +32,10 @@ export default function Article({ data }: Props) {
         )}
         <PublishedDate date={data.publishedAt || data.createdAt} />
       </div>
+      <h1 className={styles.title}>{data.title}</h1>
+      <TagList tags={data.tags} />
+      {/* <p className={styles.description}>{data.description}</p> */}
+
       <picture>
         <source
           type="image/webp"
