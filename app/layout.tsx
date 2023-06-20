@@ -6,6 +6,7 @@ import Nav from '@/components/Nav';
 import './globals.css';
 import styles from './layout.module.css';
 import { Nunito, Noto_Sans_JP, M_PLUS_Rounded_1c } from 'next/font/google';
+import { Providers } from './providers';
 
 export const metadata = {
   metadataBase: new URL(process.env.BASE_URL || 'http://localhost:3000'),
@@ -49,10 +50,12 @@ export default async function RootLayout({ children }: Props) {
   return (
     <html lang="ja" className={`${nunito.className} ${notoSansJP.className} ${mplus.variable}`}>
       <body>
-        <Header />
-        <Nav tags={tags.contents} />
-        <main className={styles.main}>{children}</main>
-        <Footer />
+        <Providers>
+          <Header />
+          <Nav tags={tags.contents} />
+          <main className={styles.main}>{children}</main>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
