@@ -28,6 +28,7 @@ body {
 }
 
 body {
+  font-family: var(--font-mplus);
   color: var(--color-text-main);
   line-height: 1.7;
 }

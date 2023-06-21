@@ -21,3 +21,19 @@ export const formatRichText = (richText: string) => {
   });
   return $.html();
 };
+
+export const createTableOfContents = (richText: string) => {
+  const $ = cheerio.load(richText);
+  const headings = $('h1, h2, h3').toArray();
+  const tableOfContents = headings
+    .map((heading) => {
+      if (heading.type === 'tag') {
+        const id = heading.attribs.id;
+        const name = heading.name;
+        const text = $(heading).text();
+        return { id, name, text };
+      }
+    })
+    .filter(Boolean);
+  return tableOfContents;
+};

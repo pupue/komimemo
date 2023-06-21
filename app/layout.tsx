@@ -31,6 +31,7 @@ const mplus = M_PLUS_Rounded_1c({
 const notoSansJP = Noto_Sans_JP({
   subsets: ['latin'],
   display: 'swap',
+  variable: '--font-notosansjp',
 });
 
 export const nunito = Nunito({
@@ -47,7 +48,7 @@ export default async function RootLayout({ children }: Props) {
     limit: LIMIT,
   });
   return (
-    <html lang="ja" className={`${nunito.className} ${notoSansJP.className} ${mplus.variable}`}>
+    <html lang="ja" className={`${nunito.className} ${mplus.variable} ${notoSansJP.variable}`}>
       <body>
         <Header />
         <Nav tags={tags.contents} />
