@@ -1,14 +1,17 @@
-import { formatRichText } from '@/libs/utils';
+import { formatRichText, createTableOfContents } from '@/libs/utils';
 import { type Article } from '@/libs/microcms';
 import PublishedDate from '../Date';
 import styles from './index.module.css';
 import TagList from '../TagList';
+import Link from 'next/link';
 
 type Props = {
   data: Article;
 };
 
 export default function Article({ data }: Props) {
+  const tableOfContents = createTableOfContents(data.content);
+
   return (
     <main className={styles.main}>
       <div className={styles.meta}>
@@ -54,6 +57,20 @@ export default function Article({ data }: Props) {
           height={data.thumbnail?.height}
         />
       </picture>
+
+      {tableOfContents.length > 0 && (
+        <div className={styles.toc}>
+          <p>目次</p>
+          <ul>
+            {tableOfContents.map((toc) => (
+              <li key={toc?.id} className={styles[`toc-${toc?.name}`]}>
+                <Link href={`#${toc?.id}`}>{toc?.text}</Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
       <div
         className={styles.content}
         dangerouslySetInnerHTML={{
