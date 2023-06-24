@@ -1,9 +1,11 @@
+'use client';
 import { formatRichText, createTableOfContents } from '@/libs/utils';
-import { type Article } from '@/libs/microcms';
+import { client, type Article, updateRead } from '@/libs/microcms';
 import PublishedDate from '../Date';
 import styles from './index.module.css';
 import TagList from '../TagList';
 import Link from 'next/link';
+import { Divider } from '@chakra-ui/react';
 
 type Props = {
   data: Article;
@@ -77,6 +79,10 @@ export default function Article({ data }: Props) {
           __html: `${formatRichText(data.content)}`,
         }}
       />
+
+      <Divider />
+
+      <button onClick={() => updateRead(data.id, data.read + 1)}>みた人はここをクリック！</button>
     </main>
   );
 }
