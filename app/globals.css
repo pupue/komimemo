@@ -32,7 +32,7 @@ body {
 }
 
 body {
-  font-family: var(--font-mplus);
+  font-family: var(--font-mplus), sans-serif;
   color: var(--color-text-main);
   line-height: 1.7;
 }

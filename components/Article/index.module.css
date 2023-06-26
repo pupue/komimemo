@@ -129,6 +129,7 @@
 
 .content > ul,
 .content > ol {
+  font-family: var(--font-notosansjp), sans-serif;
   margin-top: 2rem;
   margin-bottom: 2rem;
 }

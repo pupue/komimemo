@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { createClient } from 'microcms-js-sdk';
 import type {
   MicroCMSQueries,
@@ -29,22 +30,23 @@ export type Blog = {
   thumbnail?: MicroCMSImage;
   tags?: Tag[];
   writer?: Writer;
+  read: number;
 };
 
 export type Article = Blog & MicroCMSContentId & MicroCMSDate;
 
-if (!process.env.MICROCMS_SERVICE_DOMAIN) {
+if (!process.env.NEXT_PUBLIC_MICROCMS_SERVICE_DOMAIN) {
   throw new Error('MICROCMS_SERVICE_DOMAIN is required');
 }
 
-if (!process.env.MICROCMS_API_KEY) {
-  throw new Error('MICROCMS_API_KEY is required');
+if (!process.env.NEXT_PUBLIC_MICROCMS_API_KEY) {
+  throw new Error('NEXT_PUBLIC_MICROCMS_API_KEY is required');
 }
 
 // Initialize Client SDK.
 export const client = createClient({
-  serviceDomain: process.env.MICROCMS_SERVICE_DOMAIN,
-  apiKey: process.env.MICROCMS_API_KEY,
+  serviceDomain: process.env.NEXT_PUBLIC_MICROCMS_SERVICE_DOMAIN,
+  apiKey: process.env.NEXT_PUBLIC_MICROCMS_API_KEY,
 });
 
 // ブログ一覧を取得
@@ -94,4 +96,16 @@ export const getTag = async (contentId: string, queries?: MicroCMSQueries) => {
     .catch(notFound);
 
   return detailData;
+};
+
+// 読んだ更新
+export const updateRead = async (contentId: string, read: number) => {
+  const url = `${process.env.NEXT_PUBLIC_MICROCMS_API_URL}/blog/${contentId}`;
+  await axios.patch(
+    url,
+    { read },
+    {
+      headers: { 'X-MICROCMS-API-KEY': process.env.NEXT_PUBLIC_MICROCMS_API_KEY },
+    },
+  );
 };

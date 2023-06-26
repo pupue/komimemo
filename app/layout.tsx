@@ -29,7 +29,7 @@ const mplus = M_PLUS_Rounded_1c({
   variable: '--font-mplus',
 });
 
-const notoSansJP = Noto_Sans_JP({
+export const notoSansJP = Noto_Sans_JP({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-notosansjp',
@@ -38,6 +38,7 @@ const notoSansJP = Noto_Sans_JP({
 export const nunito = Nunito({
   subsets: ['latin'],
   display: 'swap',
+  variable: '--font-nunito',
 });
 
 type Props = {
