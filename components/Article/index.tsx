@@ -4,6 +4,8 @@ import PublishedDate from '../Date';
 import styles from './index.module.css';
 import TagList from '../TagList';
 import Link from 'next/link';
+import ReadButton from '../ReadButton';
+import { Divider } from '../ui/Divider';
 
 type Props = {
   data: Article;
@@ -77,6 +79,10 @@ export default function Article({ data }: Props) {
           __html: `${formatRichText(data.content)}`,
         }}
       />
+
+      <Divider />
+
+      <ReadButton id={data.id} count={data.read} />
     </main>
   );
 }
