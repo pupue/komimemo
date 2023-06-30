@@ -1,5 +1,5 @@
 import { formatRichText, createTableOfContents } from '@/libs/utils';
-import { type Article } from '@/libs/microcms';
+import { type Article } from '@/libs/microcms/config';
 import PublishedDate from '../Date';
 import styles from './index.module.css';
 import TagList from '../TagList';
@@ -82,7 +82,7 @@ export default function Article({ data }: Props) {
 
       <Divider />
 
-      <ReadButton id={data.id} count={data.read} />
+      <ReadButton id={data.id} />
     </main>
   );
 }
