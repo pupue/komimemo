@@ -1,4 +1,4 @@
-import { getTag } from '@/libs/microcms';
+import { getTag } from '@/libs/microcms/client';
 import TagListItem from '@/components/TagListItem';
 import styles from './layout.module.css';
 

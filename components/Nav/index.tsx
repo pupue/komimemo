@@ -1,4 +1,4 @@
-import { Tag } from '@/libs/microcms';
+import { Tag } from '@/libs/microcms/config';
 import TagList from '@/components/TagList';
 import SearchField from '@/components/SearchField';
 import styles from './index.module.css';
