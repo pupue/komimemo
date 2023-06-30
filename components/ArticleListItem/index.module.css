@@ -7,13 +7,16 @@
   gap: 40px;
 }
 
+.link picture {
+  flex-shrink: 0;
+}
+
 .image {
   width: 240px;
   height: auto;
 }
 
 .title {
-  font-family: var(--font-mplus), sans-serif;
   font-weight: bold;
   font-size: 1.6rem;
   line-height: 1.4;

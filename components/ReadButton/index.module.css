@@ -1,0 +1,6 @@
+.text {
+  font-family: var(--font-notosansjp), sans-serif;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}

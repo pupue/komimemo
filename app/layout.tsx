@@ -1,4 +1,4 @@
-import { getTagList } from '@/libs/microcms';
+import { getTagList } from '@/libs/microcms/client';
 import { LIMIT } from '@/constants';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -6,6 +6,7 @@ import Nav from '@/components/Nav';
 import './globals.css';
 import styles from './layout.module.css';
 import { Nunito, Noto_Sans_JP, M_PLUS_Rounded_1c } from 'next/font/google';
+import { Providers } from './providers';
 
 export const metadata = {
   metadataBase: new URL(process.env.BASE_URL || 'http://localhost:3000'),
@@ -28,7 +29,7 @@ const mplus = M_PLUS_Rounded_1c({
   variable: '--font-mplus',
 });
 
-const notoSansJP = Noto_Sans_JP({
+export const notoSansJP = Noto_Sans_JP({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-notosansjp',
@@ -37,6 +38,7 @@ const notoSansJP = Noto_Sans_JP({
 export const nunito = Nunito({
   subsets: ['latin'],
   display: 'swap',
+  variable: '--font-nunito',
 });
 
 type Props = {
@@ -50,10 +52,12 @@ export default async function RootLayout({ children }: Props) {
   return (
     <html lang="ja" className={`${nunito.className} ${mplus.variable} ${notoSansJP.variable}`}>
       <body>
-        <Header />
-        <Nav tags={tags.contents} />
-        <main className={styles.main}>{children}</main>
-        <Footer />
+        <Providers>
+          <Header />
+          <Nav tags={tags.contents} />
+          <main className={styles.main}>{children}</main>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
