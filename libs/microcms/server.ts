@@ -2,6 +2,12 @@
 
 import { client } from './config';
 
+// フロント側から呼び出す用
+export const incrementReadCount = async (contentId: string) => {
+  const currentReadCount = await getReadCount(contentId);
+  await updateReadCount(contentId, currentReadCount + 1);
+};
+
 // 読んだ更新
 export const updateReadCount = async (contentId: string, count: number) => {
   await client.update({

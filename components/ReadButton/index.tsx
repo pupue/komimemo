@@ -1,29 +1,37 @@
 'use client';
 
 import Lottie from 'lottie-react';
-import animationData from '@/public/lottie/lottie-good.json';
 import styles from './index.module.css';
 import { useReadButton } from '@/hooks/useReadButton';
+import { useEffect, useState } from 'react';
 
 type Props = {
   id: string;
 };
 
 export default function ReadButton({ id }: Props) {
-  const { lottieRef, handleClick } = useReadButton();
+  const { checked, showText, options, handleReadButtonClick, handleCompleteAnimation } =
+    useReadButton();
 
   return (
     <div>
-      <p className={styles.text}>
-        最後まで読んでいただきありがとうございます。
-        <br />
-        もしよければ「読んだよ！」の代わりに↓のボタンを押していってください。
-        <br />
-        最初のワンクリックがわたしの元に届きます！
-      </p>
-      <button className="flex w-[160px] mx-auto -mt-8" onClick={() => handleClick(id)}>
-        <Lottie animationData={animationData} loop={false} autoplay={false} lottieRef={lottieRef} />
+      <button
+        className={`${
+          checked ? 'pointer-events-none' : 'pointer-events-auto'
+        } flex w-[80px] mx-auto`}
+        onClick={() => handleReadButtonClick(id)}
+      >
+        <Lottie {...options} initialSegment={[41, 96]} onComplete={handleCompleteAnimation} />
       </button>
+      <p className={`${styles.text} ${showText ? 'opacity-1' : 'opacity-0'}`}>
+        最後まで読んでいただきありがとうございます！
+        <br />
+        <span className="flex flex-wrap justify-center">
+          <span>もしよければ「読んだよ！」の代わりに</span>
+          <span>↑の紙飛行機をクリックで飛ばしてください。</span>
+        </span>
+        わたしの元に届きます。
+      </p>
     </div>
   );
 }
