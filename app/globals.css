@@ -41,7 +41,7 @@ code {
   font-family: menlo, inconsolata, monospace;
   background-color: var(--color-bg-code);
   color: var(--color-text-code);
-  padding: 8px;
+  padding: 4px;
 }
 
 a {
