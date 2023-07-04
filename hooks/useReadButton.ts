@@ -1,50 +1,73 @@
-import { getReadCount, updateReadCount } from '@/libs/microcms/server';
+import { getReadCount, incrementReadCount, updateReadCount } from '@/libs/microcms/server';
 import { useToast } from '@chakra-ui/react';
 import { LottieRefCurrentProps } from 'lottie-react';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import animationData from '@/public/lottie/lottie-sending.json';
 
 export const useReadButton = () => {
   const toast = useToast();
+  const lottieRef = useRef<LottieRefCurrentProps>(null);
+  const [loop, setLoop] = useState<boolean>(false);
   const [checked, setChecked] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const lottieRef = useRef<LottieRefCurrentProps>(null);
+  const [showText, setShowText] = useState<boolean>(true);
 
-  const handleClick = async (id: string) => {
-    if (lottieRef.current) {
-      lottieRef.current.goToAndPlay(0, false);
-    }
+  const options = {
+    animationData,
+    loop,
+    autoplay: false,
+    lottieRef,
+  };
 
-    if (checked) {
+  useEffect(() => {
+    if (!lottieRef.current) {
       return;
     }
 
-    if (!isLoading) {
-      setIsLoading(true);
-      try {
-        const currentReadCount = await getReadCount(id);
-        await updateReadCount(id, currentReadCount + 1);
-        setChecked(true);
-        toast({
-          title: 'Special Thanks!!!',
-          description: 'ありがとうございます❤︎',
-          isClosable: true,
-        });
-      } catch (error) {
-        toast({
-          title: 'Error',
-          description: 'エラーが発生しました',
-          isClosable: true,
-          status: 'error',
-        });
-        console.log(error);
-      } finally {
-        setIsLoading(false);
-      }
+    if (loop) {
+      lottieRef.current.playSegments([42, 96], true);
+      return;
+    } else if (checked) {
+      lottieRef.current.playSegments([97, 120], true);
+    }
+  }, [loop, lottieRef, checked]);
+
+  const handleReadButtonClick = async (id: string) => {
+    if (checked || isLoading) {
+      return;
+    }
+
+    setIsLoading(true);
+    setShowText(false);
+    setLoop(true);
+
+    try {
+      await incrementReadCount(id);
+      setChecked(true);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsLoading(false);
+      setTimeout(() => {
+        setLoop(false);
+      }, 1500);
     }
   };
 
+  const handleCompleteAnimation = () => {
+    toast({
+      title: 'Special Thanks!!!',
+      description: 'ありがとうございました❤︎',
+      isClosable: true,
+    });
+  };
+
   return {
+    checked,
+    showText,
+    options,
     lottieRef,
-    handleClick,
+    handleReadButtonClick,
+    handleCompleteAnimation,
   };
 };
