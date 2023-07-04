@@ -48,9 +48,7 @@ export const useReadButton = () => {
       console.log(error);
     } finally {
       setIsLoading(false);
-      setTimeout(() => {
-        setLoop(false);
-      }, 1500);
+      setLoop(false);
     }
   };
 
