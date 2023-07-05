@@ -13,7 +13,7 @@ export default async function Page() {
   return (
     <>
       <LottieAnimation />
-      <p className="text-center  mb-16">日々の学びをアウトプットしていくよ</p>
+      <p className="text-center mb-12">日々の学びをアウトプットしていくよ</p>
       <ArticleList articles={data.contents} />
       <Pagination totalCount={data.totalCount} />
     </>
