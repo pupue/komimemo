@@ -1,8 +1,8 @@
 import ArticleListItem from '../ArticleListItem';
-import { Article } from '@/libs/microcms/config';
+import { ArticleType } from '@/libs/microcms/config';
 
 type Props = {
-  articles?: Article[];
+  articles?: ArticleType[];
 };
 
 export default function ArticleList({ articles }: Props) {

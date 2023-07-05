@@ -2,10 +2,10 @@ import Link from 'next/link';
 import TagList from '../TagList';
 import PublishedDate from '../Date';
 import styles from './index.module.css';
-import { Article } from '@/libs/microcms/config';
+import { ArticleType } from '@/libs/microcms/config';
 
 type Props = {
-  article: Article;
+  article: ArticleType;
 };
 
 export default function ArticleListItem({ article }: Props) {
