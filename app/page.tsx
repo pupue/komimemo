@@ -1,7 +1,7 @@
-import { getList } from '@/libs/microcms/client';
+import { getList } from '@/libs/microcms/functions';
 import { LIMIT } from '@/constants';
-import Pagination from '@/components/Pagination';
-import ArticleList from '@/components/ArticleList';
+import { Pagination } from '@/components/posts/Pagination';
+import { ArticleList } from '@/components/posts/ArticleList';
 import { LottieAnimation } from '@/components/LottieAnimation';
 
 export const revalidate = 60;

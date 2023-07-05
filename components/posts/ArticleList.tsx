@@ -1,11 +1,11 @@
-import ArticleListItem from '../ArticleListItem';
-import { Article } from '@/libs/microcms/config';
+import { ArticleListItem } from '@/components/posts/ArticleListItem';
+import { ArticleType } from '@/libs/microcms/config';
 
 type Props = {
-  articles?: Article[];
+  articles?: ArticleType[];
 };
 
-export default function ArticleList({ articles }: Props) {
+export const ArticleList = ({ articles }: Props) => {
   if (!articles) {
     return null;
   }
@@ -19,4 +19,4 @@ export default function ArticleList({ articles }: Props) {
       ))}
     </ul>
   );
-}
+};

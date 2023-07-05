@@ -4,6 +4,6 @@ type Props = {
   date: string;
 };
 
-export default function PublishedDate({ date }: Props) {
+export const Date = ({ date }: Props) => {
   return <span className="text-gray-500 text-sm font-bold">{formatDate(date)}</span>;
-}
+};

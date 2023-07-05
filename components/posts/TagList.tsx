@@ -1,4 +1,4 @@
-import TagListItem from '../TagListItem';
+import { TagListItem } from '@/components/posts/TagListItem';
 import { Tag } from '@/libs/microcms/config';
 
 type Props = {
@@ -6,7 +6,7 @@ type Props = {
   hasLink?: boolean;
 };
 
-export default function TagList({ tags, hasLink = true }: Props) {
+export const TagList = ({ tags, hasLink = true }: Props) => {
   if (!tags) {
     return null;
   }
@@ -19,4 +19,4 @@ export default function TagList({ tags, hasLink = true }: Props) {
       ))}
     </ul>
   );
-}
+};
