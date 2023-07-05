@@ -1,6 +1,5 @@
-import { Tag } from '@/libs/microcms/config';
 import TagListItem from '../TagListItem';
-import styles from './index.module.css';
+import { Tag } from '@/libs/microcms/config';
 
 type Props = {
   tags?: Tag[];
@@ -12,7 +11,7 @@ export default function TagList({ tags, hasLink = true }: Props) {
     return null;
   }
   return (
-    <ul className={styles.tags}>
+    <ul className="flex justify-end flex-wrap gap-2">
       {tags.map((tag) => (
         <li key={tag.id}>
           <TagListItem tag={tag} hasLink={hasLink} />

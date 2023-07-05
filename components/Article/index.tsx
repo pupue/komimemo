@@ -1,11 +1,12 @@
-import { formatRichText, createTableOfContents } from '@/libs/utils';
-import { type Article } from '@/libs/microcms/config';
-import PublishedDate from '../Date';
-import styles from './index.module.css';
-import TagList from '../TagList';
 import Link from 'next/link';
+import TagList from '../TagList';
+import PublishedDate from '../Date';
 import ReadButton from '../ReadButton';
 import { Divider } from '../ui/Divider';
+import styles from './index.module.css';
+import { type Article } from '@/libs/microcms/config';
+import { formatRichText, createTableOfContents } from '@/libs/utils';
+import { notoSansJP } from '@/app/layout';
 
 type Props = {
   data: Article;
@@ -39,31 +40,13 @@ export default function Article({ data }: Props) {
       </div>
       <h1 className={styles.title}>{data.title}</h1>
       <TagList tags={data.tags} />
-      {/* <p className={styles.description}>{data.description}</p> */}
-
-      <picture>
-        <source
-          type="image/webp"
-          media="(max-width: 640px)"
-          srcSet={`${data.thumbnail?.url}?fm=webp&w=414 1x, ${data.thumbnail?.url}?fm=webp&w=414&dpr=2 2x`}
-        />
-        <source
-          type="image/webp"
-          srcSet={`${data.thumbnail?.url}?fm=webp&fit=crop&w=960&h=504 1x, ${data.thumbnail?.url}?fm=webp&fit=crop&w=960&h=504&dpr=2 2x`}
-        />
-        <img
-          src={data.thumbnail?.url}
-          alt=""
-          className={styles.thumbnail}
-          width={data.thumbnail?.width}
-          height={data.thumbnail?.height}
-        />
-      </picture>
 
       {tableOfContents.length > 0 && (
         <div className={styles.toc}>
-          <p>目次</p>
-          <ul>
+          <p className="flex justify-center items-center font-bold text-lg text-center">
+            <span>目次</span>
+          </p>
+          <ul className={`${notoSansJP.className} border-b border-[#333] pt-3 px-4 pb-4`}>
             {tableOfContents.map((toc) => (
               <li key={toc?.id} className={styles[`toc-${toc?.name}`]}>
                 <Link href={`#${toc?.id}`}>{toc?.text}</Link>

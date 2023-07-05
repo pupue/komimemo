@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { Tag } from '@/libs/microcms/config';
 import styles from './index.module.css';
+import { Tag } from '@/libs/microcms/config';
 
 type Props = {
   tag: Tag;
@@ -10,7 +10,7 @@ type Props = {
 export default function TagListItem({ tag, hasLink = true }: Props) {
   if (hasLink) {
     return (
-      <Link href={`/tags/${tag.id}`} className={styles.tag}>
+      <Link href={`/tags/${tag.id}`} className={`${styles.tag} lg:hover:opacity-[0.7]`}>
         #{tag.name}
       </Link>
     );
