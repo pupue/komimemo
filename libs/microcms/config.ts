@@ -24,6 +24,7 @@ export type Blog = {
   tags?: Tag[];
   writer?: Writer;
   read: number;
+  emoji: string;
 };
 
 export type Article = Blog & MicroCMSContentId & MicroCMSDate;
