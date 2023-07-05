@@ -1,6 +1,6 @@
 import styles from './layout.module.css';
 import { getTag } from '@/libs/microcms/functions';
-import { TagListItem } from '@/components/TagListItem';
+import { TagListItem } from '@/components/posts/TagListItem';
 
 type Props = {
   children: React.ReactNode;
