@@ -1,12 +1,12 @@
 import { getTagList } from '@/libs/microcms/client';
 import { LIMIT } from '@/constants';
-import { Footer } from '@/components/Footer';
+import { Footer } from '@/components/layouts/Footer';
 
 import './globals.scss';
 import styles from './layout.module.css';
 import { Nunito, Noto_Sans_JP, M_PLUS_Rounded_1c } from 'next/font/google';
 import { Providers } from './providers';
-import { Header } from '@/components/Header';
+import { Header } from '@/components/layouts/Header';
 
 export const metadata = {
   metadataBase: new URL(process.env.BASE_URL || 'http://localhost:3000'),

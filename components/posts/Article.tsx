@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import TagList from '@/components/TagList';
-import { Date } from '@/components/Date';
-import ReadButton from '@/components/ReadButton';
+import { TagList } from '@/components/posts/TagList';
+import { Date } from '@/components/posts/Date';
+import { ReadButton } from '@/components/posts/ReadButton';
 import { Divider } from '@/components/ui/Divider';
 import { type ArticleType } from '@/libs/microcms/config';
 import { formatRichText, createTableOfContents } from '@/libs/utils';

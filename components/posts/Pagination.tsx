@@ -23,7 +23,9 @@ export const Pagination = ({ totalCount, current = 1, basePath = '', q }: Props)
               {p}
             </Link>
           ) : (
-            <span className="flex items-center justify-center w-9 h-9 rounded-sm">{p}</span>
+            <span className="flex items-center justify-center w-9 h-9 rounded-md bg-[#f1f2f3]">
+              {p}
+            </span>
           )}
         </li>
       ))}

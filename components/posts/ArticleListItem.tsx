@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import TagList from '@/components/TagList';
-import { Date } from '@/components/Date';
+import { TagList } from '@/components/posts/TagList';
+import { Date } from '@/components/posts/Date';
 import { ArticleType } from '@/libs/microcms/config';
 
 type Props = {

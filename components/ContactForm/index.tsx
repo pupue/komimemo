@@ -1,9 +1,9 @@
 'use client';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { Stack, Button, Container } from '@chakra-ui/react';
-import Input from '../ui/Input';
-import Textarea from '../ui/Textarea';
 import styles from './index.module.css';
+import { Input } from '@/components/ui/Input';
+import { Textarea } from '@/components/ui/Textarea';
 
 type Inputs = {
   name: string;

@@ -1,14 +1,13 @@
 'use client';
 
 import Lottie from 'lottie-react';
-import styles from './index.module.css';
 import { useReadButton } from '@/hooks/useReadButton';
 
 type Props = {
   id: string;
 };
 
-export default function ReadButton({ id }: Props) {
+export const ReadButton = ({ id }: Props) => {
   const { checked, showText, options, handleReadButtonClick, handleCompleteAnimation } =
     useReadButton();
 
@@ -22,7 +21,7 @@ export default function ReadButton({ id }: Props) {
       >
         <Lottie {...options} initialSegment={[41, 96]} onComplete={handleCompleteAnimation} />
       </button>
-      <p className={`${styles.text} ${showText ? 'opacity-1' : 'opacity-0'}`}>
+      <p className={`relative z-10 text-center text-sm ${showText ? 'opacity-1' : 'opacity-0'}`}>
         最後まで読んでいただきありがとうございます！
         <br />
         <span className="flex flex-wrap justify-center">
@@ -33,4 +32,4 @@ export default function ReadButton({ id }: Props) {
       </p>
     </div>
   );
-}
+};
