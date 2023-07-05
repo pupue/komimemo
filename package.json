@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start --port 3301",
     "lint": "next lint",
-    "lintfix": "next lint --fix",
+    "lintfix": "eslint --fix .",
     "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json,css}'",
     "prepare": "husky install"
   },
@@ -52,6 +52,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
+    "eslint-plugin-unused-imports": "^2.0.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.2",
     "postcss": "^8.4.24",

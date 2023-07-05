@@ -1,4 +1,4 @@
-import { getReadCount, incrementReadCount, updateReadCount } from '@/libs/microcms/server';
+import { incrementReadCount } from '@/libs/microcms/server';
 import { useToast } from '@chakra-ui/react';
 import { LottieRefCurrentProps } from 'lottie-react';
 import { useEffect, useRef, useState } from 'react';
