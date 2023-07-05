@@ -1,7 +1,7 @@
 'use client';
-import Form from '@/components/Form';
-import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import Form from '@/components/Form';
 
 export default async function Page() {
   const router = useRouter();

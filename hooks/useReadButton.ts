@@ -1,7 +1,7 @@
-import { getReadCount, incrementReadCount, updateReadCount } from '@/libs/microcms/server';
+import { useEffect, useRef, useState } from 'react';
 import { useToast } from '@chakra-ui/react';
 import { LottieRefCurrentProps } from 'lottie-react';
-import { useEffect, useRef, useState } from 'react';
+import { incrementReadCount } from '@/libs/microcms/server';
 import animationData from '@/public/lottie/lottie-sending.json';
 
 export const useReadButton = () => {

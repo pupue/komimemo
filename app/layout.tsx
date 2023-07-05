@@ -1,12 +1,11 @@
 import { getTagList } from '@/libs/microcms/client';
 import { LIMIT } from '@/constants';
 import Footer from '@/components/Footer';
-import Nav from '@/components/Nav';
+
 import './globals.css';
 import styles from './layout.module.css';
 import { Nunito, Noto_Sans_JP, M_PLUS_Rounded_1c } from 'next/font/google';
 import { Providers } from './providers';
-import { LottieAnimation } from '@/components/LottieAnimation';
 import { Header } from '@/components/Header';
 
 export const metadata = {

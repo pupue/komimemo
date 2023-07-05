@@ -1,11 +1,11 @@
-import { formatRichText, createTableOfContents } from '@/libs/utils';
-import { type Article } from '@/libs/microcms/config';
-import PublishedDate from '../Date';
-import styles from './index.module.css';
-import TagList from '../TagList';
 import Link from 'next/link';
+import TagList from '../TagList';
+import PublishedDate from '../Date';
 import ReadButton from '../ReadButton';
 import { Divider } from '../ui/Divider';
+import styles from './index.module.css';
+import { type Article } from '@/libs/microcms/config';
+import { formatRichText, createTableOfContents } from '@/libs/utils';
 
 type Props = {
   data: Article;

@@ -1,5 +1,5 @@
-import { Article } from '@/libs/microcms/config';
 import ArticleListItem from '../ArticleListItem';
+import { Article } from '@/libs/microcms/config';
 
 type Props = {
   articles?: Article[];
