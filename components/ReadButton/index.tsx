@@ -3,7 +3,6 @@
 import Lottie from 'lottie-react';
 import styles from './index.module.css';
 import { useReadButton } from '@/hooks/useReadButton';
-import { useEffect, useState } from 'react';
 
 type Props = {
   id: string;

@@ -1,6 +1,6 @@
 import { MicroCMSQueries } from 'microcms-js-sdk';
-import { Blog, Tag, client } from './config';
 import { notFound } from 'next/navigation';
+import { Blog, Tag, client } from './config';
 
 // ブログ一覧を取得
 export const getList = async (queries?: MicroCMSQueries) => {

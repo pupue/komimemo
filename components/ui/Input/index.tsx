@@ -1,5 +1,5 @@
-import { Stack, Input as CInput, Textarea, Button } from '@chakra-ui/react';
-import { ButtonHTMLAttributes, InputHTMLAttributes } from 'react';
+import { InputHTMLAttributes } from 'react';
+import { Input as CInput } from '@chakra-ui/react';
 
 type Props = InputHTMLAttributes<HTMLInputElement> & {
   label: string;
