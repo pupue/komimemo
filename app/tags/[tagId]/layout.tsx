@@ -1,5 +1,5 @@
 import styles from './layout.module.css';
-import { getTag } from '@/libs/microcms/client';
+import { getTag } from '@/libs/microcms/functions';
 import { TagListItem } from '@/components/TagListItem';
 
 type Props = {

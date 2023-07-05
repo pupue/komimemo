@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { getDetail } from '@/libs/microcms/client';
+import { getDetail } from '@/libs/microcms/functions';
 import { Article } from '@/components/posts/Article';
 
 type Props = {

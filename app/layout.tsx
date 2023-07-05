@@ -1,4 +1,4 @@
-import { getTagList } from '@/libs/microcms/client';
+import { getTagList } from '@/libs/microcms/functions';
 import { LIMIT } from '@/constants';
 import { Footer } from '@/components/layouts/Footer';
 

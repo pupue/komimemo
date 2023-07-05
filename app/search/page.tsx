@@ -1,4 +1,4 @@
-import { getList } from '@/libs/microcms/client';
+import { getList } from '@/libs/microcms/functions';
 import { ArticleList } from '@/components/posts/ArticleList';
 import { Pagination } from '@/components/posts/Pagination';
 
