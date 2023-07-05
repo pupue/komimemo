@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import TagList from '@/components/TagList';
-import PublishedDate from '@/components/Date';
+import { Date } from '@/components/Date';
 import ReadButton from '@/components/ReadButton';
 import { Divider } from '@/components/ui/Divider';
 import { type ArticleType } from '@/libs/microcms/config';
@@ -17,7 +17,7 @@ export const Article = ({ data }: Props) => {
   return (
     <main className="flex flex-col justify-between items-center">
       <div className="flex items-center sm:mb-10 sm:text-sm">
-        <PublishedDate date={data.publishedAt || data.createdAt} />
+        <Date date={data.publishedAt || data.createdAt} />
       </div>
       <h1 className="text-center font-bold text-3xl mb-5 sm:text-4xl sm:mb-2">{data.title}</h1>
       <TagList tags={data.tags} />

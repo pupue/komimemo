@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import TagList from '@/components/TagList';
-import PublishedDate from '@/components/Date';
+import { Date } from '@/components/Date';
 import { ArticleType } from '@/libs/microcms/config';
 
 type Props = {
@@ -11,7 +11,7 @@ export const ArticleListItem = ({ article }: Props) => {
   return (
     <li className="border-b py-10">
       <Link href={`/articles/${article.id}`} className="inline-block lg:hover:opacity-[0.7]">
-        <PublishedDate date={article.publishedAt || article.createdAt} />
+        <Date date={article.publishedAt || article.createdAt} />
         <div className="text-xl font-bold mb-2 sm:text-2xl">{article.title}</div>
       </Link>
       <div>
