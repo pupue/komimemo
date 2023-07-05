@@ -6,6 +6,7 @@ import { Divider } from '../ui/Divider';
 import styles from './index.module.css';
 import { type Article } from '@/libs/microcms/config';
 import { formatRichText, createTableOfContents } from '@/libs/utils';
+import { notoSansJP } from '@/app/layout';
 
 type Props = {
   data: Article;
@@ -42,8 +43,10 @@ export default function Article({ data }: Props) {
 
       {tableOfContents.length > 0 && (
         <div className={styles.toc}>
-          <p>目次</p>
-          <ul>
+          <p className="flex justify-center items-center font-bold text-lg text-center">
+            <span>目次</span>
+          </p>
+          <ul className={`${notoSansJP.className} border-b border-[#333] pt-3 px-4 pb-4`}>
             {tableOfContents.map((toc) => (
               <li key={toc?.id} className={styles[`toc-${toc?.name}`]}>
                 <Link href={`#${toc?.id}`}>{toc?.text}</Link>

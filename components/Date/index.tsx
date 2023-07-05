@@ -1,5 +1,3 @@
-import Image from 'next/image';
-import styles from './index.module.css';
 import { formatDate } from '@/libs/utils';
 
 type Props = {
@@ -7,10 +5,5 @@ type Props = {
 };
 
 export default function PublishedDate({ date }: Props) {
-  return (
-    <span className={styles.date}>
-      <Image src="/clock.svg" alt="" width={16} height={16} priority />
-      {formatDate(date)}
-    </span>
-  );
+  return <span className="text-gray-500 text-sm font-bold">{formatDate(date)}</span>;
 }

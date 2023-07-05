@@ -10,18 +10,18 @@ type Props = {
 
 export default function ArticleListItem({ article }: Props) {
   return (
-    <li className={styles.list}>
-      <Link href={`/articles/${article.id}`} className="flex gap-5">
-        <dl className={styles.content}>
-          <dt className={styles.title}>{article.title}</dt>
-          <dd>
-            <TagList tags={article.tags} hasLink={false} />
-          </dd>
-          <dd className={styles.date}>
+    <li className="border-b py-10">
+      <Link href={`/articles/${article.id}`} className="inline-block lg:hover:opacity-[0.7]">
+        <div className={styles.content}>
+          <div className={styles.date}>
             <PublishedDate date={article.publishedAt || article.createdAt} />
-          </dd>
-        </dl>
+          </div>
+          <div className={styles.title}>{article.title}</div>
+        </div>
       </Link>
+      <div>
+        <TagList tags={article.tags} hasLink={true} />
+      </div>
     </li>
   );
 }

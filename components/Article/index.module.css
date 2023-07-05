@@ -193,20 +193,20 @@
 
 .toc {
   width: 100%;
-  margin-bottom: 2.8em;
+  margin: 2.8em 0;
 }
 
-.toc p {
-  display: inline-block;
-  background: rgba(0, 0, 0, 0.8);
-  color: #fff;
-  border-radius: 4px 4px 0 0;
-  padding: 5px 25px;
+.toc p span {
+  flex-shrink: 0;
+  padding: 0 16px;
 }
 
-.toc ul {
-  background: #f1f2f3;
-  padding: 20px;
+.toc p::before,
+.toc p::after {
+  content: '';
+  background: #263238;
+  height: 1px;
+  width: 100%;
 }
 
 .toc li {
