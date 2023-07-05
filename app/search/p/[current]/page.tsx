@@ -1,7 +1,7 @@
 import { getList } from '@/libs/microcms/client';
 import { LIMIT } from '@/constants';
 import Pagination from '@/components/Pagination';
-import ArticleList from '@/components/ArticleList';
+import { ArticleList } from '@/components/ArticleList';
 
 type Props = {
   params: {
