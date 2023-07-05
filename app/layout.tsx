@@ -3,6 +3,7 @@ import { LIMIT } from '@/constants';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Nav from '@/components/Nav';
+
 import './globals.css';
 import styles from './layout.module.css';
 import { Nunito, Noto_Sans_JP, M_PLUS_Rounded_1c } from 'next/font/google';

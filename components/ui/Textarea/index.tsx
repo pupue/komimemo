@@ -1,5 +1,5 @@
-import { Textarea as CTextarea } from '@chakra-ui/react';
 import { TextareaHTMLAttributes } from 'react';
+import { Textarea as CTextarea } from '@chakra-ui/react';
 
 type Props = TextareaHTMLAttributes<HTMLTextAreaElement> & {
   label: string;
