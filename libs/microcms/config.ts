@@ -24,10 +24,9 @@ export type Blog = {
   tags?: Tag[];
   writer?: Writer;
   read: number;
-  emoji: string;
 };
 
-export type Article = Blog & MicroCMSContentId & MicroCMSDate;
+export type ArticleType = Blog & MicroCMSContentId & MicroCMSDate;
 
 if (!process.env.MICROCMS_SERVICE_DOMAIN) {
   throw new Error('MICROCMS_SERVICE_DOMAIN is required');
