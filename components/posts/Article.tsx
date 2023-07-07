@@ -41,7 +41,7 @@ export const Article = ({ data }: Props) => {
 
       <div
         data-style="content"
-        className="max-w-3xl px-5"
+        className="w-full max-w-3xl"
         dangerouslySetInnerHTML={{
           __html: `${formatRichText(data.content)}`,
         }}
