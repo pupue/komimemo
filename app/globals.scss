@@ -154,7 +154,11 @@ ul {
   figure > img {
     max-width: 100%;
     height: auto;
-    margin: 2rem 0;
+  }
+
+  figcaption {
+    text-align: right;
+    color: var(--color-text-sub);
   }
 
   strong {
