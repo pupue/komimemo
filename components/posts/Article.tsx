@@ -19,7 +19,9 @@ export const Article = ({ data }: Props) => {
       <div className="flex items-center sm:mb-10 sm:text-sm">
         <Date date={data.publishedAt || data.createdAt} />
       </div>
-      <h1 className="text-center font-bold text-3xl mb-5 sm:text-4xl sm:mb-2">{data.title}</h1>
+      <h1 className="text-center font-bold text-3xl leading-[1.4] mb-5 sm:text-4xl sm:mb-2">
+        {data.title}
+      </h1>
       <TagList tags={data.tags} />
 
       {tableOfContents.length > 0 && (
