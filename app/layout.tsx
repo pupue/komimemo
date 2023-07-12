@@ -10,10 +10,10 @@ import { Header } from '@/components/layouts/Header';
 
 export const metadata = {
   metadataBase: new URL(process.env.BASE_URL || 'http://localhost:3000'),
-  title: 'こみいめも',
+  title: 'こみめも',
   description: 'がんばります',
   openGraph: {
-    title: 'こみいめも',
+    title: 'こみめも',
     description: 'がんばってかきます',
     images: '/og-image.png',
   },
