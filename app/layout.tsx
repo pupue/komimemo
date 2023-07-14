@@ -4,9 +4,9 @@ import { Footer } from '@/components/layouts/Footer';
 
 import './globals.scss';
 import styles from './layout.module.css';
-import { Nunito, Noto_Sans_JP, M_PLUS_Rounded_1c } from 'next/font/google';
 import { Providers } from './providers';
 import { Header } from '@/components/layouts/Header';
+import { mplus, notoSansJP, nunito } from './fonts';
 
 export const metadata = {
   metadataBase: new URL(process.env.BASE_URL || 'http://localhost:3000'),
@@ -21,25 +21,6 @@ export const metadata = {
     canonical: '/',
   },
 };
-
-const mplus = M_PLUS_Rounded_1c({
-  weight: ['400', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-mplus',
-});
-
-export const notoSansJP = Noto_Sans_JP({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-notosansjp',
-});
-
-export const nunito = Nunito({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-nunito',
-});
 
 type Props = {
   children: React.ReactNode;
