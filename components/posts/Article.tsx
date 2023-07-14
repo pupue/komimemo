@@ -5,7 +5,7 @@ import { ReadButton } from '@/components/posts/ReadButton';
 import { Divider } from '@/components/ui/Divider';
 import { type ArticleType } from '@/libs/microcms/config';
 import { formatRichText, createTableOfContents } from '@/libs/utils';
-import { notoSansJP } from '@/app/layout';
+import { notoSansJP } from '@/app/fonts';
 
 type Props = {
   data: ArticleType;
