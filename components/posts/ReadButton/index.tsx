@@ -2,14 +2,22 @@
 
 import Lottie from 'lottie-react';
 import { useReadButton } from './useReadButton';
+import { Toast } from '@/components/ui/Toast';
 
 type Props = {
   id: string;
 };
 
 export const ReadButton = ({ id }: Props) => {
-  const { checked, showText, options, handleReadButtonClick, handleCompleteAnimation } =
-    useReadButton();
+  const {
+    checked,
+    showText,
+    showToast,
+    options,
+    handleReadButtonClick,
+    handleCompleteAnimation,
+    handleCloseClick,
+  } = useReadButton();
 
   return (
     <div>
@@ -34,6 +42,8 @@ export const ReadButton = ({ id }: Props) => {
         </span>
         わたしの元に届きます。
       </p>
+
+      <Toast visible={showToast} handleClick={handleCloseClick} />
     </div>
   );
 };
