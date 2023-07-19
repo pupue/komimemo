@@ -1,3 +1,7 @@
+'use client';
+
+import { Divider as CDivider } from '@chakra-ui/react';
+
 export const Divider = () => {
-  return <div className="w-full h-[1px] bg-gray-200 my-16" />;
+  return <CDivider m={16} />;
 };

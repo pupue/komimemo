@@ -1,15 +1,16 @@
 import { useEffect, useRef, useState } from 'react';
+import { useToast } from '@chakra-ui/react';
 import { LottieRefCurrentProps } from 'lottie-react';
 import { incrementReadCount } from '@/libs/microcms/server';
 import animationData from '@/public/lottie/lottie-sending.json';
 
 export const useReadButton = () => {
+  const toast = useToast();
   const lottieRef = useRef<LottieRefCurrentProps>(null);
   const [loop, setLoop] = useState<boolean>(false);
   const [checked, setChecked] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [showText, setShowText] = useState<boolean>(true);
-  const [showToast, setShowToast] = useState<boolean>(false);
 
   const options = {
     animationData,
@@ -19,11 +20,15 @@ export const useReadButton = () => {
   };
 
   useEffect(() => {
+    if (!lottieRef.current) {
+      return;
+    }
+
     if (loop) {
-      lottieRef?.current?.playSegments([42, 96], true);
+      lottieRef.current.playSegments([42, 96], true);
       return;
     } else if (checked) {
-      lottieRef?.current?.playSegments([97, 120], true);
+      lottieRef.current.playSegments([97, 120], true);
     }
   }, [loop, lottieRef, checked]);
 
@@ -48,12 +53,11 @@ export const useReadButton = () => {
   };
 
   const handleCompleteAnimation = () => {
-    setShowToast(true);
-    lottieRef?.current?.destroy();
-  };
-
-  const handleCloseClick = () => {
-    setShowToast(false);
+    toast({
+      title: 'Special Thanks!!!',
+      description: 'ありがとうございました❤︎',
+      isClosable: true,
+    });
   };
 
   return {
@@ -61,9 +65,7 @@ export const useReadButton = () => {
     showText,
     options,
     lottieRef,
-    showToast,
     handleReadButtonClick,
     handleCompleteAnimation,
-    handleCloseClick,
   };
 };
