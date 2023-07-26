@@ -11,13 +11,15 @@ export const TagListItem = ({ tag, hasLink = true }: Props) => {
     return (
       <Link
         href={`/tags/${tag.id}`}
-        className="text-[#005e94] text-sm font-bold lg:hover:opacity-[0.7]"
+        className="text-[#005e94] dark:text-[#4EAFE7] text-sm font-bold lg:hover:opacity-[0.7]"
       >
         #{tag.name}
       </Link>
     );
   }
   return (
-    <span className="text-[#005e94] text-sm font-bold lg:hover:opacity-[0.7]">#{tag.name}</span>
+    <span className="text-[#005e94] dark:text-[#4EAFE7] text-sm font-bold lg:hover:opacity-[0.7]">
+      #{tag.name}
+    </span>
   );
 };

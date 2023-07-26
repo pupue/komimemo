@@ -3,9 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono',
-    'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono',
-    'Courier New', monospace;
+  --color-code-filename-bg: #f3f3f3;
+  --color-code-filename-text: #333;
   --color-text-main: #333;
   --color-text-sub: #999;
   --color-text-code: #fff;
@@ -17,6 +16,16 @@
   --color-border-light: #f3f3f3;
   --color-current: #eee;
   --border-radius: 4px;
+}
+
+[data-theme='dark'] {
+  --color-code-filename-bg: #f3f3f3;
+  --color-code-filename-text: #333;
+  --color-text-main: #fff;
+  --color-text-sub: #c5c5c5;
+  --color-text-code: #fff;
+  --color-bg-main: #333;
+  --color-bg-code: #263238;
 }
 
 * {
@@ -114,7 +123,8 @@ ul {
 
   div[data-filename]::before {
     display: inline-block;
-    background-color: var(--color-bg-sub);
+    color: var(--color-code-filename-text);
+    background-color: var(--color-code-filename-bg);
     content: attr(data-filename);
     margin: 1em 0 0;
     font-family: menlo, inconsolata, monospace;

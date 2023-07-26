@@ -24,13 +24,13 @@ export const ReadButton = ({ id }: Props) => {
       <button
         className={`${
           checked ? 'pointer-events-none' : 'pointer-events-auto'
-        } flex w-[80px] mx-auto`}
+        } flex w-[80px] mx-auto mb-2`}
         onClick={() => handleReadButtonClick(id)}
       >
         <Lottie {...options} initialSegment={[41, 96]} onComplete={handleCompleteAnimation} />
       </button>
       <p
-        className={`relative z-10 text-center text-sm leading-[1.7] ${
+        className={`relative z-10 text-center text-sm leading-[1.7]${
           showText ? 'opacity-1' : 'opacity-0'
         }`}
       >
