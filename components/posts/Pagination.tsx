@@ -18,12 +18,12 @@ export const Pagination = ({ totalCount, current = 1, basePath = '', q }: Props)
           {current !== p ? (
             <Link
               href={`${basePath}/p/${p}` + (q ? `?q=${q}` : '')}
-              className="flex items-center justify-center w-9 h-9 rounded-sm"
+              className="flex items-center justify-center w-9 h-9 rounded-sm dark:text-[#f1f2f3]"
             >
               {p}
             </Link>
           ) : (
-            <span className="flex items-center justify-center w-9 h-9 rounded-md bg-[#f1f2f3]">
+            <span className="flex items-center justify-center w-9 h-9 rounded-md bg-[#f1f2f3] dark:text-gray-800">
               {p}
             </span>
           )}
