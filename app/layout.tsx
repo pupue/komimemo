@@ -6,6 +6,7 @@ import { LIMIT } from '@/constants';
 import './globals.scss';
 import { Header } from '@/components/layouts/Header';
 import { Footer } from '@/components/layouts/Footer';
+import { ThemeContainer } from '@/components/theme/ThemeContainer';
 
 export const metadata = {
   metadataBase: new URL(process.env.BASE_URL || 'http://localhost:3000'),
@@ -33,9 +34,11 @@ export default async function RootLayout({ children }: Props) {
     <html lang="ja" className={`${nunito.variable} ${mplus.variable} ${notoSansJP.variable}`}>
       <body>
         <Providers>
-          <Header />
-          <main className={styles.main}>{children}</main>
-          <Footer />
+          <ThemeContainer>
+            <Header />
+            <main className={styles.main}>{children}</main>
+            <Footer />
+          </ThemeContainer>
         </Providers>
       </body>
     </html>
