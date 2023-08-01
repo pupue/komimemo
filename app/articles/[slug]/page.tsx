@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { Article as ArticleType, WithContext } from 'schema-dts';
 import { getDetail } from '@/libs/microcms/functions';
 import { Article } from '@/components/posts/Article';
 
@@ -34,5 +35,27 @@ export default async function Page({ params, searchParams }: Props) {
     draftKey: searchParams.dk,
   });
 
-  return <Article data={data} />;
+  const jsonLd: WithContext<ArticleType> = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: data.title,
+    image: 'https://komimemo.vercel.app/ogp.png',
+    datePublished: data.publishedAt,
+    dateModified: data.updatedAt,
+    author: {
+      '@type': 'Person',
+      name: 'Komiyama Reika',
+      url: 'https://twitter.com/______komi',
+    },
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <Article data={data} />;
+    </>
+  );
 }
