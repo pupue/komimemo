@@ -8,14 +8,26 @@ import { Header } from '@/components/layouts/Header';
 import { Footer } from '@/components/layouts/Footer';
 import { ThemeContainer } from '@/components/theme/ThemeContainer';
 
+const siteName = 'こみめも';
+const description =
+  '現役ひよっこフロントエンドエンジニアによる日々の学びをアウトプットする場です。';
+const url = 'https://komimemo.vercel.app/';
+
 export const metadata = {
   metadataBase: new URL(process.env.BASE_URL || 'http://localhost:3000'),
-  title: 'こみめも',
-  description: 'がんばります',
+  title: {
+    default: siteName,
+    template: `%s - ${siteName}`,
+  },
+  description,
   openGraph: {
-    title: 'こみめも',
-    description: 'がんばってかきます',
-    images: '/og-image.png',
+    title: siteName,
+    description,
+    images: '/ogp.png',
+    url,
+    siteName,
+    locale: 'ja_JP',
+    type: 'article',
   },
   alternates: {
     canonical: '/',
