@@ -1,4 +1,3 @@
-import styles from './layout.module.css';
 import { Providers } from './providers';
 import { mplus, notoSansJP, nunito } from './fonts';
 import { getTagList } from '@/libs/microcms/functions';
@@ -48,7 +47,7 @@ export default async function RootLayout({ children }: Props) {
         <Providers>
           <ThemeContainer>
             <Header />
-            <main className={styles.main}>{children}</main>
+            <main className="max-w-4xl mx-auto">{children}</main>
             <Footer />
           </ThemeContainer>
         </Providers>
