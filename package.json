@@ -7,8 +7,8 @@
     "build": "next build",
     "start": "next start --port 3301",
     "lint": "next lint",
-    "lintfix": "eslint --fix .",
-    "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json,css}'",
+    "lintfix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx}'",
+    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx}'",
     "prepare": "husky install"
   },
   "prettier": {
@@ -25,6 +25,7 @@
   "dependencies": {
     "@types/cheerio": "^0.22.31",
     "@types/node": "18.15.3",
+    "@types/nodemailer": "^6.4.9",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
     "axios": "^1.4.0",
@@ -36,12 +37,14 @@
     "eslint-config-next": "13.2.4",
     "eslint-config-prettier": "^8.7.0",
     "firebase": "^10.1.0",
+    "firebase-functions": "^4.4.1",
     "framer-motion": "^10.12.16",
     "highlight.js": "^11.7.0",
     "lottie-react": "^2.4.0",
     "microcms-js-sdk": "^2.3.2",
     "next": "^13.4.4",
     "next-themes": "^0.2.1",
+    "nodemailer": "^6.9.4",
     "prettier": "^2.8.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",

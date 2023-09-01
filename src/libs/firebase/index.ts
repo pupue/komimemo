@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore, addDoc, collection } from 'firebase/firestore';
+import { getFirestore, addDoc, collection, connectFirestoreEmulator } from 'firebase/firestore';
 import { Inputs } from '@/components/contact/Form';
 import { ERROR_MESSAGE_SENT, SUCCESS_MESSAGE_SENT } from '@/constants/messages';
 
@@ -15,6 +15,10 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+
+if (process.env.NODE_ENV === 'development') {
+  connectFirestoreEmulator(db, '127.0.0.1', 8080);
+}
 
 export const addContact = async (contact: Inputs) => {
   try {
