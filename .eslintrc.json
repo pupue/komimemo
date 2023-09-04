@@ -28,10 +28,6 @@
             "group": "internal"
           },
           {
-            "pattern": "@/public",
-            "group": "internal"
-          },
-          {
             "pattern": "@/libs",
             "group": "internal"
           },
