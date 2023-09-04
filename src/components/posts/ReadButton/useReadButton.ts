@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { LottieRefCurrentProps } from 'lottie-react';
 import { incrementReadCount } from '@/libs/microcms/server';
-import animationData from '/public/lottie/lottie-sending.json';
+import animationData from '@/public/lottie/lottie-sending.json';
 
 export const useReadButton = () => {
   const lottieRef = useRef<LottieRefCurrentProps>(null);
