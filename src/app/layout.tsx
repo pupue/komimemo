@@ -14,7 +14,7 @@ const description =
 const url = 'https://komimemo.vercel.app/';
 
 export const metadata = {
-  metadataBase: new URL(process.env.BASE_URL || 'http://localhost:3000'),
+  metadataBase: new URL(process.env.BASE_URL || 'http://localhost:3302'),
   title: {
     default: siteName,
     template: `%s - ${siteName}`,
