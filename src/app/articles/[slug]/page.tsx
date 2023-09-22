@@ -55,7 +55,7 @@ export default async function Page({ params, searchParams }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Article data={data} />;
+      <Article data={data} />
     </>
   );
 }
