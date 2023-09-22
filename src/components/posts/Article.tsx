@@ -15,7 +15,7 @@ export const Article = ({ data }: Props) => {
   const tableOfContents = createTableOfContents(data.content);
 
   return (
-    <main className="flex flex-col justify-between items-center">
+    <div className="flex flex-col justify-between items-center">
       <div className="flex items-center sm:mb-10 sm:text-sm">
         <Date date={data.publishedAt || data.createdAt} />
       </div>
@@ -52,6 +52,6 @@ export const Article = ({ data }: Props) => {
       <Divider />
 
       <ReadButton id={data.id} />
-    </main>
+    </div>
   );
 };
