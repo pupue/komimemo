@@ -17,7 +17,7 @@ export default async function Page() {
       <p className="text-center mb-12">日々の学びをアウトプットしていくよ</p>
       <div className="text-sm border border-[#333] dark:border-white">
         <details>
-          <summary className="flex items-center justify-between p-4 cursor-pointer list-none">
+          <summary className="flex items-center justify-between gap-4 p-4 cursor-pointer list-none">
             <span>
               どっちが安いか比較するアプリ{' '}
               <a
