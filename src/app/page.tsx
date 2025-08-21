@@ -3,6 +3,7 @@ import { LIMIT } from '@/constants';
 import { Pagination } from '@/components/posts/Pagination';
 import { ArticleList } from '@/components/posts/ArticleList';
 import { DownIcon } from '@/components/ui/icons/down-icon';
+import { LottieAnimation } from '@/components/LottieAnimation';
 
 export const revalidate = 60;
 
@@ -12,7 +13,7 @@ export default async function Page() {
   });
   return (
     <>
-      {/* <LottieAnimation /> */}
+      <LottieAnimation />
       <p className="text-center mb-12">日々の学びをアウトプットしていくよ</p>
       <div className="text-sm border border-[#333] dark:border-white">
         <details>
