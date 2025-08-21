@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { TagList } from '@/components/posts/TagList';
-import { Date } from '@/components/posts/Date';
-import { ReadButton } from '@/components/posts/ReadButton';
+import { Date as DateComponent } from '@/components/posts/Date';
+// import { ReadButton } from '@/components/posts/ReadButton';
 import { Divider } from '@/components/ui/Divider';
 import { type ArticleType } from '@/libs/microcms/config';
 import { formatRichText, createTableOfContents } from '@/libs/utils';
@@ -17,7 +17,7 @@ export const Article = ({ data }: Props) => {
   return (
     <div className="flex flex-col justify-between items-center">
       <div className="flex items-center sm:mb-10 sm:text-sm">
-        <Date date={data.publishedAt || data.createdAt} />
+        <DateComponent date={data.publishedAt || data.createdAt} />
       </div>
       <h1 className="text-center font-bold text-3xl leading-[1.4] mb-5 sm:text-4xl sm:mb-2">
         {data.title}
@@ -51,7 +51,7 @@ export const Article = ({ data }: Props) => {
 
       <Divider />
 
-      <ReadButton id={data.id} />
+      {/* <ReadButton id={data.id} /> */}
     </div>
   );
 };
